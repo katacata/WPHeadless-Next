@@ -26,10 +26,6 @@ export default async function getAllPosts() {
               }
             }
           }
-          seo {
-            metaDesc
-            title
-          }
         }
       }
     }

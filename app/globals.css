@@ -4,30 +4,60 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer base {
   body {
-    @apply relative mx-auto space-y-8 px-4 py-8 antialiased;
+    @apply relative mx-auto space-y-4 px-4 py-8 antialiased;
     @apply prose prose-zinc dark:prose-invert;
-    @apply dark:bg-zinc-900;
+    @apply bg-white;
+    @apply text-black;
+    @apply max-w-full;
+    @apply p-0;
+  }
+
+  main{
+    @apply text-2xl;
+    @apply leading-10;
+    @apply max-w-full;
+    @apply border-red-600;
+    @apply border-4;
+    @apply mx-auto;
+    @apply p-1;
+  }
+
+  section{
+    @apply max-w-full;
   }
 
   input {
     @apply rounded px-4 py-2;
-    @apply text-zinc-900;
-    @apply bg-zinc-200 dark:bg-zinc-200;
+    @apply text-emerald-500;
+    @apply bg-zinc-900;
   }
 
   textarea {
     @apply rounded px-4 py-2;
-    @apply text-zinc-900;
-    @apply bg-zinc-200 dark:bg-zinc-200;
+    @apply text-emerald-500;
+    @apply bg-zinc-900;
   }
 
   button,
   .button,
   [type='submit'] {
     @apply rounded px-4 py-3 leading-tight no-underline;
-    @apply bg-zinc-200 text-zinc-900 dark:bg-zinc-400;
-    @apply hover:bg-zinc-300 dark:hover:bg-zinc-500;
+    @apply bg-zinc-200 text-zinc-900;
+    @apply hover:bg-zinc-300;
+  }
+}
+
+@layer components {
+  .content-container {
+    @apply max-w-6xl;
+    @apply items-center;
+    @apply ml-auto;
+    @apply mr-auto;
+    @apply border-blue-600;
+    @apply border-4;
   }
 }

@@ -13,7 +13,6 @@ export default async function getAllPages() {
           databaseId
           date
           modified
-          excerpt(format: RENDERED)
           slug
           featuredImage {
             node {
@@ -24,10 +23,6 @@ export default async function getAllPages() {
                   width
               }
             }
-          }
-          seo {
-            metaDesc
-            title
           }
         }
       }

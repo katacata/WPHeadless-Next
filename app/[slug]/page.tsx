@@ -38,10 +38,10 @@ async function fetchData(slug: string) {
 function RenderPage({page}: {page: Page}) {
   return (
     <main className="flex flex-col gap-8">
-      <article>
+      <div>
         <h1 dangerouslySetInnerHTML={{__html: page.title}} />
         <div dangerouslySetInnerHTML={{__html: page.content}} />
-      </article>
+      </div>
     </main>
   )
 }
@@ -56,13 +56,13 @@ function RenderPostsList({posts, context}: {posts: Post[]; context: string}) {
       <div className="flex flex-wrap gap-8">
         {posts.map((post: Post) => (
           <article className="w-72" key={post.databaseId}>
-            <Image
-              alt={post.featuredImage.node.altText}
-              height={post.featuredImage.node.mediaDetails.height}
-              src={post.featuredImage.node.sourceUrl}
-              width={post.featuredImage.node.mediaDetails.width}
-              priority={true}
-            />
+            {/*<Image*/}
+            {/*  alt={post.featuredImage.node.altText}*/}
+            {/*  height={post.featuredImage.node.mediaDetails.height}*/}
+            {/*  src={post.featuredImage.node.sourceUrl}*/}
+            {/*  width={post.featuredImage.node.mediaDetails.width}*/}
+            {/*  priority={true}*/}
+            {/*/>*/}
             <Link href={`/${context}/${post.slug}`}>
               <h2 dangerouslySetInnerHTML={{__html: post.title}} />
             </Link>

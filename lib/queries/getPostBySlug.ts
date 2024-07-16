@@ -6,8 +6,8 @@ import {Post} from '@/lib/types'
  */
 export default async function getPostBySlug(slug: string) {
   const query = `
-    query GetPost($slug: ID!) {
-      post(id: $slug, idType: SLUG) {
+    query GetPageBySlug($slug: ID = "URI") {
+      post(idType: URI, id: $slug) {
         databaseId
         date
         modified
@@ -28,40 +28,6 @@ export default async function getPostBySlug(slug: string) {
             name
             avatar {
               url
-            }
-          }
-        }
-        tags {
-          nodes {
-            databaseId
-            name
-          }
-        }
-        categories {
-          nodes {
-            databaseId
-            name
-          }
-        }
-        seo {
-          metaDesc
-          title
-        }
-        comments(first: 30, where: {order: ASC}) {
-          nodes {
-            content(format: RENDERED)
-            databaseId
-            date
-            status
-            author {
-              node {
-                avatar {
-                  url
-                }
-                email
-                name
-                url
-              }
             }
           }
         }

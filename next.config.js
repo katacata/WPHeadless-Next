@@ -4,8 +4,8 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: '*.nextjswp.**'
+        protocol: 'http',
+        hostname: 'bhk.local'
       }
     ]
   },
