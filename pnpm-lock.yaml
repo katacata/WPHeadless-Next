@@ -28,7 +28,7 @@ importers:
         version: 1.1.0
     devDependencies:
       '@evilmartians/lefthook':
-        specifier: ^1.7.0
+        specifier: ^1.7.2
         version: 1.7.2
       '@tailwindcss/typography':
         specifier: ^0.5.13
