@@ -22,7 +22,7 @@ export default async function Header() {
                   <Link key="" href={"/blog/"+item.cusSlug}>
                     <div className="group hover:bg-sky-700">{item.cusTitle}
                       {item.cusSubTitle.map((subItem) => (
-                        <Link key="" href={"/blog/"+subItem.cusSubSlug}>
+                        <Link key="" href={"/blog/"+subItem.cusSubSlug} >
                           <div className="hidden group-hover:block">{subItem.cusSubTitle}</div>
                         </Link>
                       ))}
