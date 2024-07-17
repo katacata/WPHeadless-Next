@@ -1,10 +1,13 @@
 
 import Link from 'next/link'
 import getCustomMenu from "@/lib/queries/getCustomMenuBySlug";
+import React from "react";
 
 /**
  * Header component.
  */
+
+
 export default async function Header() {
   const menu = await getCustomMenu()
   return (
@@ -17,18 +20,28 @@ export default async function Header() {
               <p>It&apos;s Headless WordPress</p>
             </div>
             <nav className="flex justify-between gap-4">
+              <ul className="flex flex-row space-x-8 list-none">
               {!!menu &&
                 menu.customMenuPage.customMenu.cusMenuTitle.map((item) => (
-                  <Link key="" href={"/blog/"+item.cusSlug}>
-                    <div className="group hover:bg-sky-700">{item.cusTitle}
-                      {item.cusSubTitle.map((subItem) => (
-                        <Link key="" href={"/blog/"+subItem.cusSubSlug} >
-                          <div className="hidden group-hover:block">{subItem.cusSubTitle}</div>
-                        </Link>
-                      ))}
+                  <li key={item.cusSlug}>
+                    <div className="group hover:bg-sky-700">
+                      <Link href={"/blog/"+item.cusSlug}>
+                        {item.cusTitle}
+                      </Link>
+                      <br/>
+                      <ul className="flex flex-row space-x-8">
+                        {item.cusSubTitle.map((subItem) => (
+                          <li key={subItem.cusSubSlug} className="hidden group-hover:block">
+                            <Link href={"/blog/" + subItem.cusSubSlug}>
+                              {subItem.cusSubTitle}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                  </Link>
+                  </li>
                 ))}
+              </ul>
             </nav>
           </div>
         </section>
