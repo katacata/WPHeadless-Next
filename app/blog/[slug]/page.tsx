@@ -4,6 +4,8 @@ import getPostBySlug from '@/lib/queries/getPostBySlug'
 import {Metadata} from 'next'
 import Link from 'next/link'
 import {notFound} from 'next/navigation'
+import Script from 'next/script'
+
 
 /**
  * Generate the static routes at build time.

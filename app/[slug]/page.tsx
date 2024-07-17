@@ -1,4 +1,3 @@
-import getAllBooks from '@/lib/queries/getAllBooks'
 import getAllPosts from '@/lib/queries/getAllPosts'
 import getPageBySlug from '@/lib/queries/getPageBySlug'
 import {Page, Post} from '@/lib/types'
@@ -14,12 +13,6 @@ async function fetchData(slug: string) {
   if (slug === 'blog') {
     return {posts: await getAllPosts(), context: 'blog'}
   }
-
-  // If the slug is 'books', fetch all books.
-  if (slug === 'books') {
-    return {posts: await getAllBooks(), context: 'books'}
-  }
-
   // Otherwise, this could be a page.
   const page = await getPageBySlug(slug)
 

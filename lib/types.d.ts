@@ -34,6 +34,21 @@ export interface Menu {
   }
 }
 
+export interface Mission {
+  "ourMission": {
+    "missionContent": {
+      "missionTitle": string;
+      "missionDescription": string;
+      "missionImage":{
+        node: {
+          "sourceUrl": string;
+        }
+      }
+    }
+  }
+}
+
+
 export interface FeaturedImage {
   node: {
     altText: string

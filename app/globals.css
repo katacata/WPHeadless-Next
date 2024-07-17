@@ -28,6 +28,10 @@
 
   section{
     @apply max-w-full;
+    @apply border-amber-500;
+    @apply border-4;
+    @apply ps-0;
+    @apply items-center;
   }
 
   input {
