@@ -16,16 +16,21 @@ export interface GraphQLResponse<T = any> {
 }
 
 export interface Menu {
-  menuItems: {
-    edges: [
-      {
-        node: {
-          uri: string
-          label: string
-          databaseId: string
+  "customMenuPage": {
+    "customMenu": {
+      "cusMenuTitle": [
+        {
+          "cusTitle": string
+          "cusSlug": string
+          "cusSubTitle": [
+            {
+              "cusSubTitle": string
+              "cusSubSlug": string
+            }
+          ]
         }
-      }
-    ]
+      ]
+    }
   }
 }
 
@@ -40,19 +45,19 @@ export interface FeaturedImage {
   }
 }
 
-export interface Menu {
-  menuItems: {
-    edges: [
-      {
-        node: {
-          uri: string
-          label: string
-          databaseId: string
-        }
-      }
-    ]
-  }
-}
+// export interface Menu {
+//   menuItems: {
+//     edges: [
+//       {
+//         node: {
+//           uri: string
+//           label: string
+//           databaseId: string
+//         }
+//       }
+//     ]
+//   }
+// }
 
 export interface Page {
   author: {
