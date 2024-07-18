@@ -3,7 +3,7 @@
  */
 export default function Footer() {
   return (
-    <footer className="text-sm text-center border-t-2 bg-amber-400 max-w-full">
+    <footer className="text-sm text-center border-t-2 bg-orange-600 max-w-full">
       <main>
         <section>
           <div className="content-container">

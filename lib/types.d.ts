@@ -33,7 +33,24 @@ export interface Menu {
     }
   }
 }
+export interface Gallery {
+  "title": string,
+  "slug": string,
+  "featuredImage": FeaturedImage,
+  "categories": {
+    "nodes": [
+      {
+        "name": string
+        "slug": string
+      }
+    ]
+  }
+}
 
+export interface GalleryCat{
+  "name": string,
+  "slug": string
+}
 export interface Mission {
   "ourMission": {
     "missionContent": {
