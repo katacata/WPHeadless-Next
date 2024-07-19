@@ -13,28 +13,29 @@ import Icon from "@/public/bhk_logo.svg"
 export default async function Header() {
   const menu = await getCustomMenu()
   return (
-    <header className="max-w-full">
-      <main>
-        <section>
-          <div className="content-container flex justify-center items-center">
+    <header className="">
+      <main className="max-w-full">
+        <section className="h-[120px]">
+          <div className="content-container h-full flex justify-center items-center">
             <Image src={Icon} alt="" className="items-center"/>
           </div>
         </section>
-        <section className="bg-orange-600">
-          <div className="content-container">
+        <section className="bg-orange-600 h-[72px]">
+          <div className="content-container flex justify-center items-center h-full">
             <nav className="flex justify-between gap-4">
               <ul className="flex flex-row space-x-16 list-none ps-4 mt-0 mb-0">
                 {!!menu &&
                   menu.customMenuPage.customMenu.cusMenuTitle.map((item) => (
                     <li key={item.cusSlug} className="mt-0 mb-0">
                       <div className="group hover:bg-sky-700">
-                        <Link href={"/blog/" + item.cusSlug} className="no-underline text-black">
+                        <Link href={"/blog/" + item.cusSlug} className="no-underline text-white uppercase text-center font-[700]">
                           {item.cusTitle}
+                          {item.cusSubTitle? " ↓":""}
                         </Link>
                         <br/>
                         <ul
                           className="absolute bg-green-500  hidden flex-col space-y-2 list-none group-hover:flex z-1000 mt-0 mb-0 ps-0">
-                          {item.cusSubTitle.map((subItem) => (
+                          {!!item.cusSubTitle && item.cusSubTitle.map((subItem) => (
                             <li key={subItem.cusSubSlug} className="mt-0 mb-0 hover:bg-green-700">
                               <Link href={"/blog/" + subItem.cusSubSlug} className="no-underline text-black">
                                 {subItem.cusSubTitle}
@@ -45,12 +46,12 @@ export default async function Header() {
                       </div>
                     </li>
                   ))}
-                <li className="mt-0 mb-0">
+                <li className="mt-0 mb-0 hidden">
                   <Link href={"/mission"} className="no-underline text-black">
                     Our Mission
                   </Link>
                 </li>
-                <li className="mt-0 mb-0">
+                <li className="mt-0 mb-0 hidden">
                   <Link href={"/gallery"} className="no-underline text-black">
                     Gallery
                   </Link>

@@ -33,27 +33,6 @@ export default async function Home() {
           <aside>
             <h2>Latest Posts</h2>
             <div className="flex flex-wrap">
-              {posts.map((post: Post) => (
-                <article className="w-72" key={post.databaseId}>
-                  {/*<Image*/}
-                  {/*  alt={post.featuredImage.node.altText}*/}
-                  {/*  height={post.featuredImage.node.mediaDetails.height}*/}
-                  {/*  src={post.featuredImage.node.sourceUrl}*/}
-                  {/*  width={post.featuredImage.node.mediaDetails.width}*/}
-                  {/*  priority={true}*/}
-                  {/*/>*/}
-                  <Link href={`/blog/${post.slug}`}>
-                    <h2 dangerouslySetInnerHTML={{__html: post.title}}/>
-                  </Link>
-                  <p className="text-sm text-black">
-                    {post.commentCount} Comments
-                  </p>
-                  <div dangerouslySetInnerHTML={{__html: post.excerpt}}/>
-                  <Link className="button" href={`/blog/${post.slug}`}>
-                    View Post
-                  </Link>
-                </article>
-              ))}
             </div>
 
           </aside>

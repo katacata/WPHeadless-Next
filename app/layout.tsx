@@ -3,6 +3,14 @@ import Header from '@/components/Header'
 import config from '@/lib/config'
 import type {Metadata, Viewport} from 'next'
 import './globals.css'
+import { Roboto } from 'next/font/google';
+
+const roboto = Roboto({
+  weight: ['400', '700'], // Specify the font weights you need
+  style: ['normal', 'italic'], // Specify styles if needed
+  subsets: ['latin'], // Specify subsets if needed
+  display: 'swap', // Optional: controls how font is displayed
+});
 
 /**
  * Setup metadata.
@@ -33,7 +41,7 @@ export const viewport: Viewport = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
-      <body>
+      <body className={roboto.className}>
         <Header />
           {children}
         <Footer />

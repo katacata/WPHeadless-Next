@@ -14,6 +14,7 @@
     @apply text-black;
     @apply max-w-full;
     @apply p-0;
+    @apply text-[24px] font-[400] leading-[170%];
   }
 
   main{
@@ -22,8 +23,8 @@
     @apply max-w-full;
     @apply border-red-600;
     @apply border-4;
+    @apply p-0;
     @apply mx-auto;
-    @apply p-1;
   }
 
   section{
