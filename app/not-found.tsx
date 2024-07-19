@@ -11,7 +11,7 @@ export default async function NotFound() {
 
   return (
     <>
-      <h1 className="text-center">404 - Not Found</h1>
+      <h1 className="text-center text-red-500">404 - Not Found</h1>
       <p className="text-center text-red-500">{referer}</p>
     </>
   )

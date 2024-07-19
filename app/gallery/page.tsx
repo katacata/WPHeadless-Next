@@ -7,6 +7,7 @@ import getAllPosts from "@/lib/queries/getAllPosts";
 import getOurMission from "@/lib/queries/getOurMission";
 import {notFound} from "next/navigation";
 import Image from "next/image";
+import getAllGalleryCat from "@/lib/queries/getAllGalleryCat";
 
 /**
  * Generate the static routes at build time.
@@ -33,29 +34,11 @@ export async function generateStaticParams() {
  *
  * @see https://nextjs.org/docs/app/api-reference/functions/generate-metadata#generatemetadata-function
  */
-export async function generateMetadata({
-                                         params
-                                       }: {
-  params: {slug: string}
-}): Promise<Metadata | null> {
-  // Get the blog post.
-  const post = await getPostBySlug(params.slug)
 
-  // No post? Bail...
-  if (!post) {
-    return {}
-  }
-
-  return {
-    title: post.title,
-    description: ""
-  }
-}
-
-export default async function Post({params}: {params: {slug: string}}) {
+export default async function Gallery({params}: {params: {slug: string}}) {
 
   const galleries = await getAllGalleries();
-
+  const galleryCats = await getAllGalleryCat();
   // No post? Bail...
   if (!galleries) {
     notFound()
@@ -65,8 +48,17 @@ export default async function Post({params}: {params: {slug: string}}) {
     <main>
       <section>
         <div className="content-container">
-          <h1 className="title text-black">Property Listings</h1>
+          <div className="flex-row">
+            {galleryCats.map(({name, slug}) => (
+              <div className="category" key={slug}>
+                <Link href={"/gallery/"+slug}>
+                  <h2 className="text-black">{name}</h2>
+                </Link>
+              </div>
+            ))}
+          </div>
           <div className="property-list">
+            {JSON.stringify(galleries)}
             {galleries.map(({ title, slug, featuredImage}) => (
               <div className="property-item" key={slug}>
                 <Link href={"/"}>

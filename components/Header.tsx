@@ -1,7 +1,9 @@
 
 import Link from 'next/link'
+import Image from 'next/image'
 import getCustomMenu from "@/lib/queries/getCustomMenuBySlug";
 import React from "react";
+import Icon from "@/public/bhk_logo.svg"
 
 /**
  * Header component.
@@ -13,14 +15,11 @@ export default async function Header() {
   return (
     <header className="max-w-full">
       <main>
-          <section>
-            <div className="content-container">
-              <div className="ps-4">
-                <Link href="/"><h1 className="mb-0 text-black">Next.js WordPress</h1></Link>
-                <p>It&apos;s Headless WordPress</p>
-              </div>
-            </div>
-          </section>
+        <section>
+          <div className="content-container flex justify-center items-center">
+            <Image src={Icon} alt="" className="items-center"/>
+          </div>
+        </section>
         <section className="bg-orange-600">
           <div className="content-container">
             <nav className="flex justify-between gap-4">
