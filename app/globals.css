@@ -5,13 +5,12 @@
 @tailwind utilities;
 
 
-
 @layer base {
   body {
     @apply relative mx-auto space-y-4 px-4 py-8 antialiased;
     @apply prose prose-zinc dark:prose-invert;
     @apply bg-white;
-    @apply text-black;
+    @apply text-LIVER;
     @apply max-w-full;
     @apply p-0;
     @apply text-[24px] font-[400] leading-[170%];
@@ -21,16 +20,12 @@
     @apply text-2xl;
     @apply leading-10;
     @apply max-w-full;
-    @apply border-red-600;
-    @apply border-4;
     @apply p-0;
     @apply mx-auto;
   }
 
   section{
     @apply max-w-full;
-    @apply border-amber-500;
-    @apply border-4;
     @apply ps-0;
     @apply items-center;
   }
@@ -62,7 +57,9 @@
     @apply items-center;
     @apply ml-auto;
     @apply mr-auto;
-    @apply border-blue-600;
-    @apply border-4;
+  }
+
+  .curve-container {
+    @apply relative;
   }
 }

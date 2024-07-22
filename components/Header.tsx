@@ -22,7 +22,7 @@ export default async function Header() {
             <Image src={Icon} alt="" className="items-center"/>
           </div>
         </section>
-        <section className="bg-orange-600 h-[72px]">
+        <section className="bg-SUNBURN h-[72px]">
           <div className="content-container flex justify-center items-center h-full">
             <nav className="flex justify-between gap-4">
               <ul className="flex flex-row space-x-16 list-none mt-0 mb-0">

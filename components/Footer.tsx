@@ -14,7 +14,7 @@ export default async function Footer() {
   return (
     <footer>
       <main>
-        <section>
+        <section className="bg-LAVENDER">
           <div className="content-container flex justify-center items-center h-full">
             <nav className="flex justify-between gap-4">
               <ul className="flex flex-row space-x-16 list-none mt-0 mb-0">
@@ -65,8 +65,8 @@ export default async function Footer() {
             </nav>
           </div>
         </section>
-        <section className="text-sm text-center border-t-2 bg-orange-600 max-w-full">
-          <div className="content-container text-[16px] text-white">
+        <section className="text-sm text-center border-t-2 bg-SUNBURN max-w-full h-[64px]">
+          <div className="content-container text-[16px]  h-full flex text-white justify-center items-center">
             &copy; {new Date().getFullYear()} The Better Hong Kong Foundation. All rights reserved. {' '}
             <Link href="https://she.com">Privacy Policy</Link>
           </div>
