@@ -32,24 +32,24 @@ export async function generateStaticParams() {
  *
  * @see https://nextjs.org/docs/app/api-reference/functions/generate-metadata#generatemetadata-function
  */
-export async function generateMetadata({
-  params
-}: {
-  params: {slug: string}
-}): Promise<Metadata | null> {
-  // Get the blog post.
-  const post = await getPostBySlug(params.slug)
-
-  // No post? Bail...
-  if (!post) {
-    return {}
-  }
-
-  return {
-    title: post.title,
-    description: ""
-  }
-}
+// export async function generateMetadata({
+//   params
+// }: {
+//   params: {slug: string}
+// }): Promise<Metadata | null> {
+//   // Get the blog post.
+//   const post = await getPostBySlug(params.slug)
+//
+//   // No post? Bail...
+//   if (!post) {
+//     return {}
+//   }
+//
+//   return {
+//     title: post.title,
+//     description: ""
+//   }
+// }
 
 /**
  * The blog post route.

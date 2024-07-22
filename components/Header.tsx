@@ -15,7 +15,7 @@ export default async function Header() {
   return (
     <header className="">
       <main className="max-w-full">
-        <section className="h-[120px]">
+        <section className="h-[150px]">
           <div className="content-container h-full flex justify-center items-center">
             <Image src={Icon} alt="" className="items-center"/>
           </div>
@@ -27,17 +27,17 @@ export default async function Header() {
                 {!!menu &&
                   menu.customMenuPage.customMenu.cusMenuTitle.map((item) => (
                     <li key={item.cusSlug} className="mt-0 mb-0">
-                      <div className="group hover:bg-sky-700">
+                      <div className="group">
                         <Link href={"/blog/" + item.cusSlug} className="no-underline text-white uppercase text-center font-[700]">
                           {item.cusTitle}
                           {item.cusSubTitle? " ↓":""}
                         </Link>
                         <br/>
                         <ul
-                          className="absolute bg-green-500  hidden flex-col space-y-2 list-none group-hover:flex z-1000 mt-0 mb-0 ps-0">
+                          className="absolute bg-gray-300  hidden flex-col space-y-2 list-none group-hover:flex z-1000 mt-0 mb-0 ps-0">
                           {!!item.cusSubTitle && item.cusSubTitle.map((subItem) => (
-                            <li key={subItem.cusSubSlug} className="mt-0 mb-0 hover:bg-green-700">
-                              <Link href={"/blog/" + subItem.cusSubSlug} className="no-underline text-black">
+                            <li key={subItem.cusSubSlug} className="mt-0 mb-0">
+                              <Link href={"/blog/" + subItem.cusSubSlug} className="text-gray-700 hover:text-orange-400 no-underline hover:underline text-center font-[700]">
                                 {subItem.cusSubTitle}
                               </Link>
                             </li>
