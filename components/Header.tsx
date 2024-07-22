@@ -12,6 +12,8 @@ import Icon from "@/public/bhk_logo.svg"
 
 export default async function Header() {
   const menu = await getCustomMenu()
+  const title = menu?.customMenuPage?.customMenu?.cusMenuTitle
+
   return (
     <header className="">
       <main className="max-w-full">
@@ -23,14 +25,21 @@ export default async function Header() {
         <section className="bg-orange-600 h-[72px]">
           <div className="content-container flex justify-center items-center h-full">
             <nav className="flex justify-between gap-4">
-              <ul className="flex flex-row space-x-16 list-none ps-4 mt-0 mb-0">
+              <ul className="flex flex-row space-x-16 list-none mt-0 mb-0">
                 {!!menu &&
-                  menu.customMenuPage.customMenu.cusMenuTitle.map((item) => (
+                  title.map((item) => (
                     <li key={item.cusSlug} className="mt-0 mb-0">
                       <div className="group">
                         <Link href={"/blog/" + item.cusSlug} className="no-underline text-white uppercase text-center font-[700]">
-                          {item.cusTitle}
-                          {item.cusSubTitle? " ↓":""}
+                          <div className="inline-block">{item.cusTitle}</div>
+                          {item.cusSubTitle ?
+                            <div className="relative w-4 h-4 mr-4 group inline-block">
+                              <div
+                                className="absolute top-2 left-0 w-2.5 h-0.5 bg-white transform rotate-45 transition-all duration-200 group-hover:rotate-0"></div>
+                              <div
+                                className="absolute top-2 right-0 w-2.5 h-0.5 bg-white transform -rotate-45 transition-all duration-200 group-hover:-rotate-0"></div>
+                            </div>
+                            : ""}
                         </Link>
                         <br/>
                         <ul
@@ -57,7 +66,6 @@ export default async function Header() {
                   </Link>
                 </li>
               </ul>
-
             </nav>
           </div>
         </section>
