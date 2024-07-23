@@ -14,7 +14,7 @@ export default async function Footer() {
   return (
     <footer>
       <main>
-        <section className="bg-LAVENDER">
+        <section className="bg-LAVENDER pt-[30px]">
           <div className="content-container flex justify-center items-center h-full">
             <nav className="flex justify-between gap-4">
               <ul className="flex flex-row space-x-16 list-none mt-0 mb-0">
